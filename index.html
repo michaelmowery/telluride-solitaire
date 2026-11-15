@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b5d3b">
+  <meta name="description" content="Play solitaire with the Telluride Seasons photo playing cards.">
+  <title>Telluride Solitaire</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 64 40" aria-hidden="true"><path d="M2 38 L20 10 L28 22 L38 4 L62 38 Z" fill="currentColor" opacity=".9"/><path d="M34 11 L38 4 L42 11 L39 9 L37 12 Z" fill="#fff"/></svg>
+      <div>
+        <h1>Telluride Solitaire</h1>
+        <div class="sub" id="dealLabel">Deal #—</div>
+      </div>
+    </div>
+    <div class="stats" aria-live="polite">
+      <span><b id="moves">0</b> moves</span>
+      <span><b id="time">0:00</b></span>
+    </div>
+    <nav class="actions">
+      <button id="btnUndo" title="Undo (U)">Undo</button>
+      <button id="btnHint" title="Hint (H)">Hint</button>
+      <button id="btnDraw" title="Toggle draw 1 / draw 3 (starts a new game)">Draw 1</button>
+      <button id="btnNew" class="primary" title="New game (N)">New game</button>
+    </nav>
+  </header>
+
+  <main id="board" class="board" aria-label="Solitaire table">
+    <!-- slots and cards are rendered by js/ui.js -->
+  </main>
+
+  <div id="win" class="win" hidden>
+    <canvas id="confetti"></canvas>
+    <div class="win-card">
+      <div class="win-seasons"><span class="s-S">♠</span><span class="s-H">♥</span><span class="s-D">♦</span><span class="s-C">♣</span></div>
+      <h2>All four seasons complete</h2>
+      <p id="winStats"></p>
+      <button id="btnAgain" class="primary">Deal again</button>
+      <a class="buy" href="https://www.telluride.cards" target="_blank" rel="noopener">Get the real deck at telluride.cards</a>
+    </div>
+  </div>
+
+  <footer class="foot">
+    Photos from the <a href="https://www.telluride.cards" target="_blank" rel="noopener">Telluride Seasons</a> deck.
+    Winter ♠ · Spring ♥ · Summer ♦ · Fall ♣
+  </footer>
+
+  <script type="module" src="js/ui.js"></script>
+</body>
+</html>
